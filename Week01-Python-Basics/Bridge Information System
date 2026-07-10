@@ -1,0 +1,9 @@
+bridge_info=[]
+name=input("please enter Bridge Name: ")
+lenght=input("please enter Bridge Length: ")
+width=input("please enter Bridge Width: ")
+Construction_Year=input("please enter Construction Year: ")
+Material=input("please enter Material: ")
+Sensors_Num=input("please enter Number of Sensors: ")
+bridge_dict={"Name":name,"Length":float(lenght),"Width":float(width),"Construction Year":int(Construction_Year),"Material":Material,"Number of Sensors":int(Sensors_Num)}
+print(bridge_dict)
