@@ -15,6 +15,7 @@ def add_bridge():
             bridge_data.append(input(f'please enter {i}: '))
            
         writer.writerow(bridge_data) 
+        print('the bridge information has added successfuly!')
 
 def show_bridges():
     with open('bridges.csv',"a+", newline="", encoding="utf-8") as file:
@@ -41,3 +42,39 @@ def search_bridge():
         else:
             for i in range(len(header)):
                 print(f'{header[i]} : {bridge_properties[i]}\n')
+
+def update_bridge():
+    if is_file_empty('bridges.csv'):
+            print('there is no bridge to update')
+            return
+    bridge_name=input('please enter the name of bridge you want to update: ')
+    print('which property you want to update?')
+    for i,item in enumerate(header):
+        print(f'{i}-{item}')
+    property_num=input('please only enter the number: ')
+    try:
+        property_num=int(property_num)
+        if property_num < 0 or property_num >= len(header):
+            print('the input number is not valid')
+            return
+    except ValueError:
+        print('the input number is not valid')
+        return
+    updated_property=input('please enter the updated property: ')    
+    bridges=show_bridges()
+    found=False
+    for i, rows in enumerate(bridges):
+        if rows[0].strip().lower() == bridge_name.strip().lower():
+            bridges[i][property_num]=updated_property 
+            found=True
+            break
+    if not found:
+        print('the bridge wasnot found')
+        return
+    with open('bridges.csv',"w", newline="", encoding="utf-8") as file:
+        writer=csv.writer(file)
+        writer.writerows(bridges)
+    print('the file has updated successfuly!')
+update_bridge()
+                                
+            
