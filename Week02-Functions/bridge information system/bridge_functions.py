@@ -1,6 +1,9 @@
 import csv
 from file_manager import is_file_empty
-header=['Bridge Name','Bridge Length','Bridge Width','Construction Year','Material','Number of Sensors']
+HEADER=['Bridge Name','Bridge Length','Bridge Width','Construction Year','Material','Number of Sensors']
+def normalize_name(name):
+    return (name.strip().lower())
+    
 def add_bridge():
     with open('bridges.csv',"a+", newline="", encoding="utf-8") as file:
         file.seek(0)
@@ -8,10 +11,10 @@ def add_bridge():
         
         
         if is_file_empty('bridges.csv'):
-            writer.writerow(header)
+            writer.writerow(HEADER)
 
         bridge_data=[]
-        for i in header:
+        for i in HEADER:
             bridge_data.append(input(f'please enter {i}: '))
            
         writer.writerow(bridge_data) 
@@ -21,7 +24,7 @@ def show_bridges():
     with open('bridges.csv',"a+", newline="", encoding="utf-8") as file:
         file.seek(0)
         if is_file_empty('bridges.csv'):
-            print('there is no bridge to show') 
+            return ['there is no bridge to show'] 
         else:
             reader=csv.reader(file)
             return(list(reader))
@@ -32,16 +35,16 @@ def search_bridge():
         return
     bridges=show_bridges()
     bridge_name=input('please enter the bridge name: ')
-    bridge_properties=[]
+    bridge_properties=None
     for rows in bridges:
-        if rows[0].strip().lower() == bridge_name.strip().lower():
+        if normalize_name(rows[0]) == normalize_name(bridge_name):
             bridge_properties=rows
             break
-    if bridge_properties==[]:
+    if bridge_properties is None:
         print('the bridge was not found')
     else:
-        for i in range(len(header)):
-            print(f'{header[i]} : {bridge_properties[i]}\n')
+        for i in range(len(HEADER)):
+            print(f'{HEADER[i]} : {bridge_properties[i]}\n')
 
 def update_bridge():
     if is_file_empty('bridges.csv'):
@@ -49,12 +52,12 @@ def update_bridge():
             return
     bridge_name=input('please enter the name of bridge you want to update: ')
     print('which property you want to update?')
-    for i,item in enumerate(header):
+    for i,item in enumerate(HEADER):
         print(f'{i}-{item}')
     property_num=input('please only enter the number: ')
     try:
         property_num=int(property_num)
-        if property_num < 0 or property_num >= len(header):
+        if property_num < 0 or property_num >= len(HEADER):
             print('the input number is not valid')
             return
     except ValueError:
@@ -64,7 +67,7 @@ def update_bridge():
     bridges=show_bridges()
     found=False
     for i, rows in enumerate(bridges):
-        if rows[0].strip().lower() == bridge_name.strip().lower():
+        if normalize_name(rows[0]) == normalize_name(bridge_name):
             bridges[i][property_num]=updated_property 
             found=True
             break
@@ -84,7 +87,7 @@ def delete_bridge():
     bridge_name=input('please enter the bridge name you want to delete: ')
     found=False
     for i,rows in enumerate(bridges):
-        if rows[0].strip().lower() == bridge_name.strip().lower():
+        if normalize_name(rows[0]) == normalize_name(bridge_name):
             del bridges[i]
             found=True
             break
