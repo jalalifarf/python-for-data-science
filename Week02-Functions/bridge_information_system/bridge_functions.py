@@ -1,3 +1,6 @@
+from pathlib import Path
+BASE_DIR = Path(__file__).parent
+CSV_FILE = BASE_DIR / "bridges.csv"
 import csv
 from file_manager import is_file_empty
 HEADER=['Bridge Name','Bridge Length','Bridge Width','Construction Year','Material','Number of Sensors']
@@ -5,12 +8,12 @@ def normalize_name(name):
     return (name.strip().lower())
     
 def add_bridge():
-    with open('bridges.csv',"a+", newline="", encoding="utf-8") as file:
+    with open(CSV_FILE,"a+", newline="", encoding="utf-8") as file:
         file.seek(0)
         writer=csv.writer(file)
         
         
-        if is_file_empty('bridges.csv'):
+        if is_file_empty(CSV_FILE):
             writer.writerow(HEADER)
 
         bridge_data=[]
@@ -21,16 +24,16 @@ def add_bridge():
         print('the bridge information has added successfuly!')
 
 def show_bridges():
-    with open('bridges.csv',"a+", newline="", encoding="utf-8") as file:
+    with open(CSV_FILE,"a+", newline="", encoding="utf-8") as file:
         file.seek(0)
-        if is_file_empty('bridges.csv'):
+        if is_file_empty(CSV_FILE):
             return ['there is no bridge to show'] 
         else:
             reader=csv.reader(file)
             return(list(reader))
 
 def search_bridge():
-    if is_file_empty('bridges.csv'):
+    if is_file_empty(CSV_FILE):
         print('the bridge was not found')
         return
     bridges=show_bridges()
@@ -47,7 +50,7 @@ def search_bridge():
             print(f'{HEADER[i]} : {bridge_properties[i]}\n')
 
 def update_bridge():
-    if is_file_empty('bridges.csv'):
+    if is_file_empty(CSV_FILE):
             print('there is no bridge to update')
             return
     bridge_name=input('please enter the name of bridge you want to update: ')
@@ -74,13 +77,13 @@ def update_bridge():
     if not found:
         print('the bridge wasnot found')
         return
-    with open('bridges.csv',"w", newline="", encoding="utf-8") as file:
+    with open(CSV_FILE,"w", newline="", encoding="utf-8") as file:
         writer=csv.writer(file)
         writer.writerows(bridges)
     print('the file has updated successfuly!')
 
 def delete_bridge():
-    if is_file_empty('bridges.csv'):
+    if is_file_empty(CSV_FILE):
         print('there is no bridge to delete')
         return
     bridges=show_bridges()
@@ -94,7 +97,7 @@ def delete_bridge():
     if not found:
         print('the bridge was not found')
         return
-    with open("bridges.csv", "w", newline="", encoding="utf-8") as file:
+    with open(CSV_FILE, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerows(bridges)
     print('the bridge has deleted successfully!')
