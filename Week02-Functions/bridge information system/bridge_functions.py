@@ -29,19 +29,19 @@ def show_bridges():
 def search_bridge():
     if is_file_empty('bridges.csv'):
         print('the bridge was not found')
+        return
+    bridges=show_bridges()
+    bridge_name=input('please enter the bridge name: ')
+    bridge_properties=[]
+    for rows in bridges:
+        if rows[0].strip().lower() == bridge_name.strip().lower():
+            bridge_properties=rows
+            break
+    if bridge_properties==[]:
+        print('the bridge was not found')
     else:
-        bridges=show_bridges()
-        bridge_name=input('please enter the bridge name: ')
-        bridge_properties=[]
-        for rows in bridges:
-            if rows[0].strip().lower() == bridge_name.strip().lower():
-                bridge_properties=rows
-                break
-        if bridge_properties==[]:
-            print('the bridge was not found')
-        else:
-            for i in range(len(header)):
-                print(f'{header[i]} : {bridge_properties[i]}\n')
+        for i in range(len(header)):
+            print(f'{header[i]} : {bridge_properties[i]}\n')
 
 def update_bridge():
     if is_file_empty('bridges.csv'):
@@ -75,6 +75,23 @@ def update_bridge():
         writer=csv.writer(file)
         writer.writerows(bridges)
     print('the file has updated successfuly!')
-update_bridge()
-                                
-            
+
+def delete_bridge():
+    if is_file_empty('bridges.csv'):
+        print('there is no bridge to delete')
+        return
+    bridges=show_bridges()
+    bridge_name=input('please enter the bridge name you want to delete: ')
+    found=False
+    for i,rows in enumerate(bridges):
+        if rows[0].strip().lower() == bridge_name.strip().lower():
+            del bridges[i]
+            found=True
+            break
+    if not found:
+        print('the bridge was not found')
+        return
+    with open("bridges.csv", "w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerows(bridges)
+    print('the bridge has deleted successfully!')
