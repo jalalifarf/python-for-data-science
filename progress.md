@@ -70,3 +70,61 @@ Implemented:
 This week I completed my first Python project .
 I learned how to organize code into multiple modules, work with CSV files, and manage a project using GitHub.
 I also realized the importance of writing clean, readable code and improving it through refactoring.
+
+# Week 3
+	
+## Completed
+
+✓ Started learning NumPy
+
+✓ Learned how to create NumPy arrays
+
+✓ Learned about array attributes
+
+✓ Learned indexing and slicing in NumPy
+
+✓ Learned mathematical operations with NumPy
+
+✓ Continued learning the basics of Object-Oriented Programming## Project
+
+## Project
+
+Completed the **Bridge Sensor Analysis** project. 
+The program performs the following tasks:
+ - Calculates the mean vibration 
+- Finds the maximum vibration 
+- Finds the minimum vibration 
+- Calculates the standard deviation
+- Identifies sensors with values above the average 
+- Displays all sensor values on request
+
+## GitHub
+
+✓ Created multiple commits during development
+
+✓ Added project documentation (README)
+✓ Uploaded the project to GitHub
+
+## Study Hours
+
+4 hours
+
+## Challenges
+
+- Working with NumPy arrays
+
+- Understanding the output of np.where()
+
+## Reflection
+
+This week I completed my second Python project.
+
+I learned how to use NumPy for numerical computing, create and manipulate arrays, perform mathematical operations, and apply indexing and slicing techniques.
+
+I also became more confident in using NumPy to analyze engineering data.
+
+## Next Week Goal
+
+- Learn the basics of Pandas
+- Read data from CSV files using Pandas
+- Explore DataFrames and Series
