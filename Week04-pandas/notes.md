@@ -18,7 +18,7 @@ import pandas as pd
 
 The pd is a common alias for Pandas.
 
-2. Reading a CSV File
+## 2. Reading a CSV File
 
 We can use read_csv() to read a CSV file and create a DataFrame.
 
@@ -27,7 +27,7 @@ df = pd.read_csv('bridges.csv')
 If the file is located in another folder, we can use a relative path:
 
 df = pd.read_csv('Week02-Functions/bridge_information_system/bridges.csv')
-3. DataFrame
+## 3. DataFrame
 
 A DataFrame is a two-dimensional data structure consisting of rows and columns.
 
@@ -41,7 +41,7 @@ Bridge B	Steel	200
 
 The variable df usually represents a DataFrame.
 
-4. DataFrame Shape
+## 4. DataFrame Shape
 
 The shape attribute returns the number of rows and columns.
 
@@ -60,7 +60,7 @@ We can access the number of rows and columns separately:
 
 df.shape[0]   # number of rows
 df.shape[1]   # number of columns
-5. DataFrame Columns
+## 5. DataFrame Columns
 
 The columns attribute returns the names of the columns.
 
@@ -69,7 +69,7 @@ df.columns
 We can convert the column names to a list:
 
 list(df.columns)
-6. DataFrame Information
+## 6. DataFrame Information
 
 The info() method displays general information about the DataFrame.
 
@@ -89,7 +89,7 @@ df.info()
 
 is a method, so we need parentheses.
 
-7. Statistical Information
+## 7. Statistical Information
 
 The describe() method provides statistical information about numerical columns.
 
@@ -109,7 +109,7 @@ maximum
 For example:
 
 df.describe()
-8. Selecting One Column
+## 8. Selecting One Column
 
 We can select one column using its name:
 
@@ -121,7 +121,7 @@ df['Bridge Length']
 
 This returns a Pandas Series.
 
-9. Selecting Multiple Columns
+## 9. Selecting Multiple Columns
 
 We can select multiple columns by passing a list of column names:
 
@@ -130,7 +130,7 @@ df[['Bridge Name', 'Material']]
 For example:
 
 df[['Bridge Name', 'Bridge Length', 'Material']]
-10. Filtering Data
+## 10. Filtering Data
 
 We can filter rows based on a condition.
 
@@ -148,7 +148,7 @@ df[df['Construction Year'] > 2000]
 
 The expression inside the brackets creates a Boolean condition.
 
-11. Multiple Filtering Conditions
+## 11. Multiple Filtering Conditions
 
 We can combine conditions using:
 
@@ -169,7 +169,7 @@ Important:
 
 Each condition should be placed inside parentheses.
 
-12. Checking if a DataFrame is Empty
+## 12. Checking if a DataFrame is Empty
 
 The .empty attribute tells us whether a DataFrame contains any rows.
 
@@ -196,7 +196,7 @@ if df_concrete.empty:
     print('There is no Concrete bridge')
 else:
     print(df_concrete)
-13. Working with Text
+## 13. Working with Text
 
 Pandas provides string methods through .str.
 
@@ -224,7 +224,7 @@ name = input('Please enter the bridge name: ').strip().lower()
 result = df[
     df['Bridge Name'].str.strip().str.lower() == name
 ]
-14. Searching for Data
+## 14. Searching for Data
 
 We can use filtering to search for a specific bridge.
 
@@ -245,7 +245,7 @@ else:
 
 The .empty check is useful because it tells us whether the search returned any results.
 
-15. Sorting Data
+## 15. Sorting Data
 
 We can sort a DataFrame using sort_values().
 
@@ -272,7 +272,7 @@ print(sorted_df)
 
 The original df is not changed.
 
-16. Grouping Data
+## 16. Grouping Data
 
 The groupby() method is used to group data based on a column.
 
@@ -291,7 +291,7 @@ For example:
 Material
 Concrete    150.5
 Steel       220.3
-17. Common Statistical Functions
+## 17. Common Statistical Functions
 
 Pandas provides several useful statistical functions.
 
@@ -318,7 +318,7 @@ df['Bridge Length'].sum()
 Count:
 
 df['Bridge Length'].count()
-18. Using .loc
+## 18. Using .loc
 
 .loc can be used to select rows and columns by labels.
 
@@ -337,7 +337,7 @@ maximum
 
 for the Bridge Length column.
 
-19. Important Difference: Attribute vs Method
+## 19. Important Difference: Attribute vs Method
 
 Some Pandas features are attributes and do not require parentheses.
 
@@ -360,7 +360,7 @@ Remember:
 
 Attribute → no ()
 Method → ()
-20. Important Pandas Methods and Attributes
+## 20. Important Pandas Methods and Attributes
 Method / Attribute	Purpose
 pd.read_csv()	Read a CSV file
 df.shape	Get number of rows and columns
