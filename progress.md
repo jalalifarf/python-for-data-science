@@ -128,3 +128,61 @@ I also became more confident in using NumPy to analyze engineering data.
 - Learn the basics of Pandas
 - Read data from CSV files using Pandas
 - Explore DataFrames and Series
+
+# Week 4
+
+## Completed
+
+✓ Started learning Pandas
+
+✓ Learned how to create Pandas DataFrames
+
+✓ Learned how to read CSV files using Pandas
+
+✓ Learned how to select data in Pandas
+
+✓ Learned grouping and sorting
+
+✓ Learned data filtering
+
+## Project
+
+Completed the **Bridge Dataset Analysis** project.
+
+The program performs the following tasks:
+
+- Reads the CSV file
+- Displays general information about the dataset
+- Displays bridge statistics
+- Filters bridges based on specific conditions
+- Searches for a bridge by name
+- Sorts bridges by a specified property
+- Groups bridges by material
+
+## GitHub
+
+✓ Uploaded the project to GitHub
+
+✓ Added project documentation (README)
+
+## Study Hours
+
+4 hours
+
+## Challenges
+
+- Working with DataFrames
+
+## Reflection
+
+This week, I completed my third Python project.
+
+I learned how to use Pandas for data analysis, read CSV files, create and manipulate DataFrames, perform statistical operations, and apply filtering, grouping, and sorting techniques.
+
+I also became more confident in using Pandas to analyze engineering data.
+
+## Next Week Goal
+
+- Start learning data visualization with Matplotlib
+- Learn how to create basic charts and plots
+- Apply data visualization techniques to engineering data
