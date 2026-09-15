@@ -186,3 +186,151 @@ I also became more confident in using Pandas to analyze engineering data.
 - Start learning data visualization with Matplotlib
 - Learn how to create basic charts and plots
 - Apply data visualization techniques to engineering data
+
+# Week 05 – Matplotlib
+
+## Completed
+
+✓ Started learning Matplotlib
+
+✓ Learned how to create line charts
+
+✓ Learned how to create bar charts
+
+✓ Learned how to create scatter plots
+
+✓ Learned how to add titles and axis labels
+
+✓ Learned how to add grids and legends
+
+✓ Learned how to customize figure size
+
+✓ Learned how to add text and annotations
+
+✓ Learned how to improve figure layout
+
+✓ Learned how to save figures
+
+✓ Learned how to use Pandas DataFrames with Matplotlib
+
+## Project
+
+Completed the **Bridge Data Visualization** project.
+
+The project includes:
+
+- Bridge length line chart
+- Maximum vibration bar chart
+- Bridge length vs maximum vibration scatter plot
+
+## GitHub
+
+✓ Uploaded the project to GitHub
+
+✓ Added project documentation (README)
+
+✓ Added learning notes
+
+## Study Hours
+
+ 4 hours
+
+## Challenges
+
+- Understanding Matplotlib syntax
+- Working with Pandas DataFrames and Matplotlib
+- Choosing an appropriate chart type for different data
+
+## Reflection
+
+This week I learned how to visualize engineering data using Matplotlib.
+
+I practiced creating different types of charts and learned how visualization can make patterns and comparisons easier to understand.
+
+I also learned how to use Pandas DataFrames as the data source for Matplotlib.
+
+## Next Week Goal
+
+Learn advanced Matplotlib and data visualization techniques.
+
+# Week 06 – Advanced Matplotlib & Data Visualization
+
+## Completed
+
+✓ Learned Object-Oriented Matplotlib
+
+✓ Learned Figure and Axes
+
+✓ Learned how to create multiple Axes in one Figure
+
+✓ Learned how to create subplots
+
+✓ Learned how to compare multiple datasets
+
+✓ Learned figure customization
+
+✓ Learned how to customize axis ticks
+
+✓ Learned how to add annotations
+
+✓ Learned scatter plots for examining relationships between variables
+
+✓ Learned basic visual analysis of relationships between variables
+
+✓ Practiced finding maximum values and their indexes using Pandas
+
+## Project
+
+Completed the **Bridge Data Analysis & Visualization V2** project.
+
+The project includes:
+
+- Bridge length comparison
+- Maximum vibration comparison
+- Bridge length vs maximum vibration scatter plot
+- Multiple visualizations using subplots
+- Annotations on charts
+- Finding the longest bridge
+- Finding the bridge with the highest maximum vibration
+- Basic analysis of the relationship between bridge length and maximum vibration
+
+## Analysis
+
+Based on the project dataset:
+
+- Bridge 4 is the longest bridge with a length of 200 m.
+- Bridge 4 has the highest maximum vibration with a value of 5.2.
+- The scatter plot suggests that longer bridges tend to have higher maximum vibration values in this small dataset.
+
+## GitHub
+
+✓ Uploaded the project to GitHub
+
+✓ Added project documentation (README)
+
+✓ Added learning notes
+
+## Study Hours
+
+3 hours
+
+## Challenges
+
+- Understanding the relationship between Figure and Axes
+- Working with multiple Axes using subplots
+- Combining Pandas and Matplotlib
+- Understanding how to visualize relationships between variables
+
+## Reflection
+
+This week I improved my Matplotlib skills and learned how to create more organized and informative figures.
+
+I practiced using multiple Axes, subplots, annotations, and scatter plots.
+
+I also learned how to perform simple data analysis using Pandas and interpret patterns in visualizations.
+
+This week helped me become more confident in using Python for data visualization and analysis.
+
+## Next Week Goal
+
+Continue learning Data Visualization and move toward more advanced data analysis techniques.
